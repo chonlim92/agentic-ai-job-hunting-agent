@@ -86,11 +86,17 @@ python main.py --mode rewoo --cv data/cv_sample.pdf --jobs https://www.linkedin.
 ## Agent Modes
 
 ### ReAct (Reasoning + Acting)
+
+![ReAct Agent Graph](images/graph_react.png)
+
 - The agent reasons step-by-step, deciding which tool to call at each turn.
 - Better for **exploratory tasks** where the agent needs to adapt based on intermediate results.
 - Supports multi-turn conversations with memory.
 
 ### ReWOO (Reasoning Without Observation)
+
+![ReWOO Agent Graph](images/graph_rewoo.png)
+
 - The agent creates a full plan upfront, then executes all steps sequentially.
 - More **efficient** (fewer LLM calls) for well-defined tasks.
 - Better for batch processing multiple job links.

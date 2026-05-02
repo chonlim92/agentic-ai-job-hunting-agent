@@ -18,6 +18,12 @@ An AI-powered career assistant that analyzes your CV against job postings and pr
 
 ![Job Hunting Agent GUI](documents/images/example_gui.jpg)
 
+## Agent Graphs
+
+| ReAct | ReWOO |
+|:-----:|:-----:|
+| ![ReAct Graph](documents/images/graph_react.png) | ![ReWOO Graph](documents/images/graph_rewoo.png) |
+
 ## Quick Start
 
 ### 1. Setup

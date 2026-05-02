@@ -46,6 +46,8 @@ Two LangChain `@tool`-decorated functions shared by both agents:
 
 Implements the **Reasoning + Acting** pattern:
 
+![ReAct Agent Graph](images/graph_react.png)
+
 - **Graph**: `START → assistant → tools_condition → tools → assistant → END`
 - The LLM decides which tool to call at each step, observes the result, and reasons about the next action.
 - Uses `MessagesState` for conversational context.
@@ -54,6 +56,8 @@ Implements the **Reasoning + Acting** pattern:
 ### 3. ReWOO Agent (`app/rewoo_agent.py`)
 
 Implements the **Reasoning Without Observation** pattern:
+
+![ReWOO Agent Graph](images/graph_rewoo.png)
 
 - **Graph**: `START → planner → executor → router(executor|solver) → END`
 - **Planner**: Generates a full plan upfront with `#E1`, `#E2`, etc. evidence variables.
