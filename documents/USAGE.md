@@ -23,7 +23,7 @@ python main.py gui
 
 This opens a Gradio app in your browser at `http://localhost:7860`.
 
-![Job Hunting Agent GUI](documents/images/example_gui.jpg)
+![Job Hunting Agent GUI](images/example_gui.jpg)
 
 **Steps:**
 1. Select **ReAct** or **ReWOO** agent mode in the left sidebar.
