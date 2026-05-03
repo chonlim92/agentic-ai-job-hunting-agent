@@ -81,6 +81,20 @@ python main.py --mode react --cv data/cv_sample.pdf --jobs https://linkedin.com/
 └── requirements.txt
 ```
 
+## Testing
+
+Unit tests use **pytest** with `unittest.mock` to isolate components from external dependencies (OpenAI API, file system).
+
+```bash
+pytest tests/ -v
+```
+
+| Test Module | Coverage |
+|-------------|----------|
+| `test_tools.py` | CV extraction (PDF, DOCX, multi-page), unsupported formats, file-not-found errors, job scraper invocation |
+| `test_react_agent.py` | Graph compilation, agent invocation, multi-link message passing |
+| `test_rewoo_agent.py` | Graph compilation, plan regex parsing, agent invocation, task construction with job links |
+
 ## Documentation
 
 - [IMPLEMENTATION.md](documents/IMPLEMENTATION.md) — Architecture and component details

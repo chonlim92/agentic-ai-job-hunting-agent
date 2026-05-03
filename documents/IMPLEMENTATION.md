@@ -130,3 +130,26 @@ LANGSMITH_PROJECT=Job Hunting Agent
 ```
 
 > **Note:** If `LANGSMITH_API_KEY` or `LANGCHAIN_API_KEY` is not set, tracing is automatically disabled and the toggle is hidden from the GUI.
+
+## Testing
+
+All tests are in `tests/` and use **pytest** with `unittest.mock` to isolate components from external APIs and the file system.
+
+```bash
+pytest tests/ -v
+```
+
+### Test Structure
+
+| Module | Class | What it tests |
+|--------|-------|---------------|
+| `test_tools.py` | `TestExtractCvText` | PDF extraction (single & multi-page), DOCX extraction, unsupported format error, file-not-found handling |
+| `test_tools.py` | `TestJobPostingScraper` | OpenAI web search invocation and response handling |
+| `test_react_agent.py` | `TestReActAgent` | `build_react_agent()` returns a compiled graph, `run_react()` invokes the agent correctly, multiple job links are passed in the message |
+| `test_rewoo_agent.py` | `TestReWOOAgent` | `build_rewoo_agent()` returns a compiled graph, `PLAN_REGEX` parses plan output correctly, `run_rewoo()` invokes the agent, job links are embedded in the task |
+
+### Mocking Strategy
+
+- **LLM calls**: `ChatOpenAI` is patched to avoid real API calls and costs.
+- **File I/O**: `pdfplumber.open` and `docx.Document` are patched to simulate document parsing.
+- **Agent graphs**: `build_react_agent` / `build_rewoo_agent` are patched in `run_*` tests to return mock graphs with predetermined outputs.
