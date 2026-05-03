@@ -88,4 +88,19 @@ python main.py --mode react --cv data/cv_sample.pdf --jobs https://linkedin.com/
 
 ## Tech Stack
 
-LangChain · LangGraph · LangSmith · OpenAI GPT · Gradio · pdfplumber · python-docx · pytest
+| Skill | Description |
+|-------|-------------|
+| LangChain | LLM orchestration framework for tool integration and prompt management |
+| LangGraph | Stateful agent graph construction with conditional edges and cycles |
+| ReAct Pattern | Iterative reasoning-and-acting loop where the LLM decides next steps based on observations |
+| ReWOO Pattern | Plan-then-execute architecture that generates a full plan before tool execution |
+| OpenAI GPT-4o | Large language model for reasoning, analysis, and content generation |
+| OpenAI Web Search | Real-time web browsing via `gpt-4o-search-preview` to extract live job posting data |
+| Tool Use / Function Calling | LLM-driven tool selection and invocation with structured inputs/outputs |
+| Multi-Agent Graph Design | Separate planner, executor, and solver nodes with state passing |
+| Conversation Memory | Thread-based persistence using `InMemorySaver` for multi-turn interactions |
+| Prompt Engineering | System prompts guiding agent behavior, output format, and task decomposition |
+| LangSmith Tracing | Observability and debugging of LLM calls, tool usage, and agent trajectories |
+| Gradio | Interactive chatbot web UI with file upload, session management, and history export |
+| Document Parsing | CV extraction from PDF/DOCX/DOC using pdfplumber and python-docx |
+| Agentic AI Architecture | End-to-end design of autonomous AI agents that reason, plan, and act |
